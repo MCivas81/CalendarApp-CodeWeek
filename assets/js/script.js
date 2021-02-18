@@ -51,6 +51,7 @@ const renderFunction = (renderList, appendElementId) => {
 
     if (appointment.completed === true) {
       myCardBody.classList.add('is-completed');
+      myCardText.classList.add('lineThrough')
       myPriority.textContent = 'Completato'
     };
 
@@ -58,8 +59,8 @@ const renderFunction = (renderList, appendElementId) => {
     myCardHeader.appendChild(mytypeId);
     myCard.append(myCardHeader, myCardBody);
     appendElementId.appendChild(myCard);
-  });
-}
+  })
+};
 
 // API call
 async function getAppointmentsAPI() {
@@ -90,7 +91,7 @@ async function getAppointmentsAPI() {
         otherApp.push(newAppointments[i])
       }
 
-    }
+    };
 
     descriptionHair.textContent = 'Appuntamenti Parruccheria: ' + (hairdresserApp.length);
     descriptionMani.textContent = 'Appuntamenti Manicure: ' + (manicureApp.length);
